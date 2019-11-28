@@ -1,13 +1,13 @@
-package tests.testparts;
+package test.uitests;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+//import org.junit.Before;
+//import org.junit.Rule;
+//import org.junit.Test;
+//import org.junit.jupiter.api.DisplayName;
+//import org.junit.rules.TestRule;
+//import org.junit.rules.TestWatcher;
+//import org.junit.runner.Description;
+//import org.junit.runners.model.Statement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,41 +25,41 @@ public class TestRunFacebook {
     private static final String CLICKARGUMENT = "arguments[0].click();";
     private ChromeDriver driver;
 
-    @Rule
-    public final TestRule watchman = new TestWatcher() {
-        @Override
-        public Statement apply(Statement base, Description description) {
-            return super.apply(base, description);
-        }
-
-        // This method gets invoked if the test fails for any reason:
-        @Override
-        protected void failed(Throwable e, Description description) {
-            // Print out the error message:
-            System.out.println(description.getDisplayName() + " " + e.getClass().getSimpleName() + "\n");
-            // Now you can do whatever you need to do with it, for example take a screenshot
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            try {
-//                File currPath = new File(new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\screenshot.png");
-                File currPath = new File(new JFileChooser().getCurrentDirectory().toString() + "\\screenshot.png");
-                System.out.println("Screenshot at: " + currPath.toString());
-                FileHandler.copy(scrFile, currPath);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        }
-
-        // This method gets called when the test finishes, regardless of status
-        // If the test fails, this will be called after the method above
-        @Override
-        protected void finished(Description description) {
-            if (driver != null) {
-                driver.quit();
-            }
-        }
-    };
-
-    @Before
+//    @Rule
+//    public final TestRule watchman = new TestWatcher() {
+//        @Override
+//        public Statement apply(Statement base, Description description) {
+//            return super.apply(base, description);
+//        }
+//
+//        // This method gets invoked if the test fails for any reason:
+//        @Override
+//        protected void failed(Throwable e, Description description) {
+//            // Print out the error message:
+//            System.out.println(description.getDisplayName() + " " + e.getClass().getSimpleName() + "\n");
+//            // Now you can do whatever you need to do with it, for example take a screenshot
+//            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//            try {
+////                File currPath = new File(new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\screenshot.png");
+//                File currPath = new File(new JFileChooser().getCurrentDirectory().toString() + "\\screenshot.png");
+//                System.out.println("Screenshot at: " + currPath.toString());
+//                FileHandler.copy(scrFile, currPath);
+//            } catch (IOException e1) {
+//                e1.printStackTrace();
+//            }
+//        }
+//
+//        // This method gets called when the test finishes, regardless of status
+//        // If the test fails, this will be called after the method above
+//        @Override
+//        protected void finished(Description description) {
+//            if (driver != null) {
+//                driver.quit();
+//            }
+//        }
+//    };
+//
+//    @Before
     public void setUp() throws Exception {
         String driverExecutablePath = "./src/main/java/resources/chromedriver76.exe";
         System.setProperty("webdriver.chrome.driver", new File(driverExecutablePath).getCanonicalPath());
@@ -67,8 +67,8 @@ public class TestRunFacebook {
         driver.get("https://www.facebook.de/");
     }
 
-    @DisplayName("Selenium Facebook Test")
-    @Test
+//    @DisplayName("Selenium Facebook Test")
+//    @Test
     public void testFacebook() throws Exception {
 
         WebElement usernameFb = driver.findElement(By.xpath("//input[@id='email']"));

@@ -1,4 +1,4 @@
-package tests;//package tests;
+package test;//package tests;
 //
 //import org.junit.Rule;
 //import org.junit.Test;

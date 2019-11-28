@@ -1,12 +1,12 @@
-package tests.testparts;
+package test.uitests;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+//import org.junit.Before;
+//import org.junit.Rule;
+//import org.junit.Test;
+//import org.junit.rules.TestRule;
+//import org.junit.rules.TestWatcher;
+//import org.junit.runner.Description;
+//import org.junit.runners.model.Statement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,8 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+//import static org.hamcrest.CoreMatchers.is;
+//import static org.junit.Assert.assertThat;
 
 
 public class TestRunDirico {
@@ -30,41 +30,41 @@ public class TestRunDirico {
     private WebDriver driver;
     JavascriptExecutor js;
 
-    @Rule
-    public final TestRule watchman = new TestWatcher() {
-        @Override
-        public Statement apply(Statement base, Description description) {
-            return super.apply(base, description);
-        }
-
-        // This method gets invoked if the test fails for any reason:
-        @Override
-        protected void failed(Throwable e, Description description) {
-            // Print out the error message:
-            System.out.println(description.getDisplayName() + " " + e.getClass().getSimpleName() + "\n");
-            // Now you can do whatever you need to do with it, for example take a screenshot
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            try {
-//        File currPath = new File(new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\screenshot.png");
-                File currPath = new File(new JFileChooser().getCurrentDirectory().toString() + "\\screenshot.png");
-                System.out.println("Screenshot at: " + currPath.toString());
-                FileHandler.copy(scrFile, currPath);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        }
-
-        // This method gets called when the test finishes, regardless of status
-        // If the test fails, this will be called after the method above
-        @Override
-        protected void finished(Description description) {
-            if (driver != null) {
-                driver.quit();
-            }
-        }
-    };
-
-    @Before
+//    @Rule
+//    public final TestRule watchman = new TestWatcher() {
+//        @Override
+//        public Statement apply(Statement base, Description description) {
+//            return super.apply(base, description);
+//        }
+//
+//        // This method gets invoked if the test fails for any reason:
+//        @Override
+//        protected void failed(Throwable e, Description description) {
+//            // Print out the error message:
+//            System.out.println(description.getDisplayName() + " " + e.getClass().getSimpleName() + "\n");
+//            // Now you can do whatever you need to do with it, for example take a screenshot
+//            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//            try {
+////        File currPath = new File(new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\screenshot.png");
+//                File currPath = new File(new JFileChooser().getCurrentDirectory().toString() + "\\screenshot.png");
+//                System.out.println("Screenshot at: " + currPath.toString());
+//                FileHandler.copy(scrFile, currPath);
+//            } catch (IOException e1) {
+//                e1.printStackTrace();
+//            }
+//        }
+//
+//        // This method gets called when the test finishes, regardless of status
+//        // If the test fails, this will be called after the method above
+//        @Override
+//        protected void finished(Description description) {
+//            if (driver != null) {
+//                driver.quit();
+//            }
+//        }
+//    };
+//
+//    @Before
     public void setUp() throws Exception {
         js = (JavascriptExecutor) driver;
         String driverExecutablePath = "./src/main/java/resources/chromedriver78.exe";
@@ -74,7 +74,7 @@ public class TestRunDirico {
         driver.get("https://c3-dev-login.azurewebsites.net");
     }
 
-    @Test
+//    @Test
     public void testDirico() throws InterruptedException {
 
 //        try {
@@ -154,8 +154,8 @@ public class TestRunDirico {
                     .perform();
         }
 //        js.executeScript("window.scrollTo(0,0)");
-        assertThat(driver.findElement(By.cssSelector(".user-menu-button > .md-caption")).getText(), is("Christian"));
-        assertThat(driver.getTitle(), is("dirico.io - Dashboard"));
+//        assertThat(driver.findElement(By.cssSelector(".user-menu-button > .md-caption")).getText(), is("Christian"));
+//        assertThat(driver.getTitle(), is("dirico.io - Dashboard"));
     }
 
     public void createNewFbContent(ChromeDriver chromeDriver) {
