@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AutomatedTesting">
+    <test name="fullTest">
+        <classes>
+            <class name="test.startFullTest"/>
+        </classes>
+    </test>
+</suite>

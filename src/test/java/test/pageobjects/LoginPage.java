@@ -9,12 +9,8 @@ public class LoginPage extends BasePage {
     //Webelements
     private By usernameBy = By.name("username");
     private By passwordBy = By.name("Password");
-//    private By loginButtonBy = By.cssSelector(".jss290 > .jss268");
-    private By loginButtonBy = By.xpath("//div[@class='MuiCardActions-root-271']//div[1]//div[1]");
-//    private By titleUsernameBy = By.cssSelector(".user-menu-button > .md-caption");
-    private By titleUsernameBy = By.xpath("//span[@class='md-caption hide-xs ng-binding ng-scope'][contains(text(),'Christian')]");
-//    private By pageTitleBy = By.name("/dirico.io - Dashboard");
-    private By pageTitleBy = By.xpath("/html[1]/body[1]/app-cmp[1]/div[1]/div[1]/div[1]/ng-outlet[1]/dashboard[1]/md-toolbar[1]/div[1]/h2[1]");
+    private By loginButtonBy = By.name("button");
+    private By pageTitleBy = By.xpath("//h2[contains(text(),'Dashboard')]");
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -29,10 +25,8 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage verifyLogin(String expectedText1, String expectedText2) {
-        assertEquals(titleUsernameBy, expectedText1);
-        assertEquals(pageTitleBy, expectedText2);
-        return this;
+    public void verifyLogin(String expectedText1) {
+        assertEquals(pageTitleBy, expectedText1);
     }
 
 }
