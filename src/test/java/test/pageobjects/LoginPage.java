@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import test.pageobjects.core.BasePage;
 
+/**
+ *
+ */
 public class LoginPage extends BasePage {
 
     //Webelements

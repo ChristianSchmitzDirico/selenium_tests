@@ -3,20 +3,17 @@ package test;
 import core.drivermanager.DriverManagerFactory;
 import core.drivermanager.DriverType;
 import lombok.Data;
-import org.testng.annotations.BeforeClass;
+import lombok.EqualsAndHashCode;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import test.base.BaseTest;
 import test.pageobjects.DashboardPage;
+import test.pageobjects.InspirationPage;
 import test.pageobjects.LoginPage;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class startFullTest extends BaseTest {
-
-//    private DriverManager driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-//    private WebDriver driver = driverManager.getWebDriver();
-
 
     @BeforeSuite
     public void setBrowserDriverType() {
@@ -24,7 +21,7 @@ public class startFullTest extends BaseTest {
 //        setDriverManager(DriverManagerFactory.getDriverManager(DriverType.FIREFOX));
     }
 
-    @Test(priority = 1, testName = "#1 Test: Login")
+    @Test(priority = 1, testName = "#1 Login")
     public void loginTest() {
 
         //*************PAGE INSTANTIATIONS*************
@@ -38,7 +35,7 @@ public class startFullTest extends BaseTest {
         ;
     }
 
-    @Test(priority = 2, testName = "#2 Test: Dashboard")
+//    @Test(priority = 2, testName = "#2 Dashboard: Task")
     public void createTaskTest() {
 
         //*************PAGE INSTANTIATIONS*************
@@ -51,9 +48,28 @@ public class startFullTest extends BaseTest {
         ;
     }
 
-//    @AfterClass
-//    public void teardown() {
-//        driverManager.quitWebDriver();
-//    }
+//    @Test(priority = 3, testName = "#2 Dashboard: Approval")
+    public void createApprovalTest() {
+
+        //*************PAGE INSTANTIATIONS*************
+        DashboardPage dashboardPage = new DashboardPage(getDriverManager().getWebDriver());
+
+        //*************PAGE METHODS********************
+        dashboardPage
+                .createContent()
+        ;
+    }
+
+    @Test(priority = 4, testName = "#3 Test: Inspiration")
+    public void createInspirationTest() {
+
+        //*************PAGE INSTANTIATIONS*************
+        InspirationPage inspirationPage = new InspirationPage(getDriverManager().getWebDriver());
+
+        //*************PAGE METHODS********************
+        inspirationPage
+                .createIspiration()
+        ;
+    }
 }
 

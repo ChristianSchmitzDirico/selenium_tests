@@ -14,7 +14,8 @@ public class DashboardPage extends BasePage {
     private By textFieldAssignTo = By.xpath("//input[@name='assignedUserIds']");
     private By fieldAssignToDropDown = By.cssSelector("#downshift-1-item-0 .MuiTypography-root-161");
     private By fieldAssignToValue = (By.xpath("//span[contains(text(),'Christian Schmitz')]"));
-    private By createdTaskTitle = By.xpath("/html[1]/body[1]/app-cmp[1]/div[1]/div[1]/div[1]/ng-outlet[1]/dashboard[1]/ng-outlet[1]/main-dashboard[1]/div[1]/div[1]/ng-include[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/table-widget-base-react[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]");
+    private By createdTaskTitle = By.xpath("//div[contains(text(),'TestTask')]");
+    private By addContentTile = By.xpath("//span[contains(text(),'Add content')]");
 
 
     public DashboardPage(WebDriver driver) {
@@ -38,6 +39,7 @@ public class DashboardPage extends BasePage {
     }
 
     public DashboardPage createContent() {
+        click(addContentTile);
         return this;
     }
 
