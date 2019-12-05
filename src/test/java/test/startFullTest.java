@@ -35,7 +35,7 @@ public class startFullTest extends BaseTest {
         ;
     }
 
-//    @Test(priority = 2, testName = "#2 Dashboard: Task")
+//        @Test(priority = 2, testName = "#2 Dashboard: Task")
     public void createTaskTest() {
 
         //*************PAGE INSTANTIATIONS*************
@@ -48,7 +48,7 @@ public class startFullTest extends BaseTest {
         ;
     }
 
-//    @Test(priority = 3, testName = "#2 Dashboard: Approval")
+//        @Test(priority = 3, testName = "#2 Dashboard: Approval")
     public void createApprovalTest() {
 
         //*************PAGE INSTANTIATIONS*************
@@ -69,7 +69,7 @@ public class startFullTest extends BaseTest {
         //*************PAGE METHODS********************
         inspirationPage
                 .createIspiration()
-        ;
+                .checkInspiration("Marvel Entertainment");
     }
 }
 

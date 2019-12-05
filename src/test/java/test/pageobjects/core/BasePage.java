@@ -16,7 +16,7 @@ public class BasePage {
     //Constructor
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 30);
     }
 
     //Wait Wrapper Method

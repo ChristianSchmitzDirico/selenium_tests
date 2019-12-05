@@ -7,6 +7,14 @@ import test.pageobjects.core.BasePage;
 
 public class DashboardPage extends BasePage {
 
+//    Dashboard
+//    Create a task and assign it to you with the "+" button on dashboard - done
+//    Check if the task is displayed in dashboard at my tasks - done
+    //TODO
+//    Go to a content and request an approval and set your name as mandatory
+//    Check if the approval is displayed in the dashboard
+//    Click on one content of each category and check if the link is working
+
     //Webelements
     private By btnAddTask = By.xpath("//button[contains(@aria-label, 'New task')]");
     private By btnSaveTask = By.xpath("//button[contains(@aria-label, 'save task')]");
