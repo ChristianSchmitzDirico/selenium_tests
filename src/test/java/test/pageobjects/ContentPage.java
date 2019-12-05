@@ -2,9 +2,9 @@ package test.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import test.pageobjects.core.BasePage;
+import test.pageobjects.core.CoreMethods;
 
-public class ContentPage extends BasePage {
+public class ContentPage extends CoreMethods {
 
     //Webelements
     private By sideBarBtnInspiration = By.xpath("//div[@title='Inspiration']");

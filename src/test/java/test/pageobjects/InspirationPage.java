@@ -2,9 +2,9 @@ package test.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import test.pageobjects.core.BasePage;
+import test.pageobjects.core.CoreMethods;
 
-public class InspirationPage extends BasePage {
+public class InspirationPage extends CoreMethods {
 
 //    Inspiration
 //    Click on Settings -> Click on "+" upper right - done

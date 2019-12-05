@@ -2,12 +2,12 @@ package test.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import test.pageobjects.core.BasePage;
+import test.pageobjects.core.CoreMethods;
 
 /**
  *
  */
-public class LoginPage extends BasePage {
+public class LoginPage extends CoreMethods {
 
     //Webelements
     private By usernameBy = By.name("username");

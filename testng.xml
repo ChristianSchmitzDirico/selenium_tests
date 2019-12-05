@@ -2,7 +2,7 @@
 <suite name="AutomatedTesting">
     <test name="fullTest">
         <classes>
-            <class name="test.startFullTest"/>
+            <class name="test.tests.maintest.startFullTest"/>
         </classes>
     </test>
 </suite>

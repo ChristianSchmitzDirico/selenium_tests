@@ -1,9 +1,9 @@
 package core.drivermanager;
 
-import core.drivermanager.browser.ChromeDriverManager;
-import core.drivermanager.browser.EdgeDriverManager;
-import core.drivermanager.browser.FireFoxDriverManager;
-import core.drivermanager.browser.SafariDriverManager;
+import core.drivermanager.browsermanager.ChromeDriverManager;
+import core.drivermanager.browsermanager.EdgeDriverManager;
+import core.drivermanager.browsermanager.FireFoxDriverManager;
+import core.drivermanager.browsermanager.SafariDriverManager;
 
 public class DriverManagerFactory {
 

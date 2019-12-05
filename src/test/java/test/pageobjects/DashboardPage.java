@@ -3,9 +3,9 @@ package test.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import test.pageobjects.core.BasePage;
+import test.pageobjects.core.CoreMethods;
 
-public class DashboardPage extends BasePage {
+public class DashboardPage extends CoreMethods {
 
 //    Dashboard
 //    Create a task and assign it to you with the "+" button on dashboard - done
